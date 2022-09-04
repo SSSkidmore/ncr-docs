@@ -51,6 +51,12 @@ cat wcsd-student001-server
 #for FILE in *; do echo $FILE; done # check bash loop first
 #for FILE in *; do sed -i 's/wcsd-/matilainen-/g' $FILE; done # replace a string
 
+# modify add_server.sh rootfs src for kali or debian templates
+vim add_server.sh
+# uncomment for debian or kali servers
+CLIENT_ROOTFS_SRC="/var/lib/machines/kali-server.tmpl/"
+# save
+
 # create server instances
 for FILE in *; do echo $FILE; done # check bash loop first
 for FILE in *; do ../../add_server.sh $FILE; done # create instances
