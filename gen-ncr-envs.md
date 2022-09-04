@@ -63,10 +63,18 @@ for FILE in *; do ../../add_server.sh $FILE; done # create instances
 
 # repeat prn for clients with add_client.sh
 
+# add to containerlist.txt
+cd containerScripts
+echo wcsd-matilainen-student{001..015}-server| sed 's/ /\n/g' >> containerlist.txt
+
+# check wan ip
+ping wcsd-matilainen-student001-server
+
 # create .man dns entries for wcsd-vnet
 for FILE in instances/matilainen/*; do ./add_dns_entries.sh $FILE; done
 systemctl restart dnsmasq
 ping wcsd-matilainen-student001-server.man
+
 cat /var/www/html/containerCheck.html
 
 # from NCR remote web interface, connect to a server from a different group
@@ -74,10 +82,6 @@ cat /var/www/html/containerCheck.html
 # check vnc connection to one of the man-ips just created (at port 5901):
 vncviewer 172.16.1.114:5901 
 # vnc password: student001
-
-# add to containerlist.txt
-cd containerScripts
-echo wcsd-matilainen-student{001..015}-server| sed 's/ /\n/g' >> containerlist.txt
 ```
 ---
 ## Create Django users
