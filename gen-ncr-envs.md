@@ -126,6 +126,9 @@ In [11]: exit
 root@ncr-0:~/guacman
 cd scripts
 # create csv of environment data:
+# find last id used
+cat data/locket.csv
+# adjust last number, i.e. 5899 in  $((10#$NUM*2+5899)) becomes 6220
 # example with client: for NUM in {001..160}; do echo "ccsd-student$NUM,ccsd-student$NUM-server,$((10#$NUM*2+5899)),ccsd-student$NUM-client,$((10#$NUM*2+5900))" >> data/ccsd.csv; done
 # server only: 
 for NUM in {001..015}; do echo "wcsd-matilainen-student$NUM,wcsd-matilainen-student$NUM-server,$((10#$NUM+6220))" >> data/matilainen.csv; done
