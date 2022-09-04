@@ -96,6 +96,9 @@ for X in {001..015}; do echo wcsd-matilainen-student$X,$(curl https://www.dinopa
 # can also use interactive shell prn: ./manage.py shell
 
 # check that users created in django online interface
+# login at https://ncr-remote.cse.unr.edu/admin
+
+# if can't login as django admin: 
 # make your username a superuser and staff: 
 (venv) gnt-remote@ncr-remote:~/ncr$ ./manage.py shell
 In [1]: from django.contrib.auth.models import User
