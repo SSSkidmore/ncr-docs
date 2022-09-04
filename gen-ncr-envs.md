@@ -140,6 +140,7 @@ cat data/matilainen.csv # check
 cp addCcsdToGuac.sh addMatilainenToGuac.sh
 vim addMatilainenToGuac.sh # edits:
 lines=`cat data/matilainen.csv`
+--cgroup "Matilainen Containers"
 # remove client connection lines
 ./addMatilainenToGuac.sh
 
