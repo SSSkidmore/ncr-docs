@@ -57,11 +57,11 @@ for FILE in *; do ../../add_server.sh $FILE; done # create instances
 
 # repeat prn for clients with add_client.sh
 
-# TODO: check with Kameron on the following 2 checks, not sure we looked at these, but found in history: 
-cat /var/www/html/containerCheck.html # not sure what this is doing yet tbh, but failing 
-ping wcsd-matilainen-student001-server.man # is failing...
-# both of these have no errors with the ccsd containers
-# but I can do this: ping 172.16.1.114 
+# create .man dns entries for wcsd-vnet
+for FILE in instances/matilainen/*; do ./add_dns_entries.sh $FILE; done
+systemctl restart dnsmasq
+ping wcsd-matilainen-student001-server.man
+cat /var/www/html/containerCheck.html
 
 # from NCR remote web interface, connect to a server from a different group
 # connected to ccsd-student01-server, open a terminal:
