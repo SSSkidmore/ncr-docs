@@ -141,7 +141,6 @@ cp addCcsdToGuac.sh addMatilainenToGuac.sh
 vim addMatilainenToGuac.sh # edits:
 lines=`cat data/matilainen.csv`
 # remove client connection lines
-vim addMatilainenToGuac.sh
 
 machinectl shell ncr-remote
 su gnt-remote
